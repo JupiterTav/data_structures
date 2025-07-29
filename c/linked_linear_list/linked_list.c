@@ -28,6 +28,26 @@ void insert_list(list **l, int item){
   *l = p;
 }
 
-void delete_from_list(list **l, int item){
+list *predecessor_list(list *l, int item){
+  if((l == NULL) || (l->next == NULL))
+    return NULL;
+  if((l->next)->node == item)
+    return l;
+  else 
+    return predecessor_list(l->next, item);
+}
 
+void delete_from_list(list **l, int item){
+  list *p;
+  list *pred;
+  
+  p = search_list(*l, item);
+  if(p != NULL){
+    pred = predecessor_list(*l, item);
+    if(pred == NULL)
+        *l = p->next;
+    else
+      pred->next = p->next;
+    free(p);
+  }
 }

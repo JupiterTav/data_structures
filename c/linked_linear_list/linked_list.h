@@ -11,4 +11,7 @@ list *search_list(list *l, int item);
 void insert_list(list **l, int item);
 
 void delete_from_list(list **l, int item);
+
+list *predecessor_list(list *l, int item);
+
 #endif

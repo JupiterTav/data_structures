@@ -16,5 +16,14 @@ int main(){
   printf("\n*TESTING SEARCH LIST FUNCTION*\n");
   int searching = search_list(a,7)->node;
   printf("Item: %d was founded", searching);
+
+  //TEST *delete_from_list* FUNCTION
+  printf("\n*TESTING DELETE FROM LIST FUNCTION*\n");
+  delete_from_list(&a, 7);
+  printf("\nnew list: ");
+  do{
+    printf("%d ", a->node);
+  }while(a->next != NULL);
+
   return 0;
 }
