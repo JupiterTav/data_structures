@@ -14,4 +14,6 @@ void delete_from_list(list **l, int item);
 
 list *predecessor_list(list *l, int item);
 
+void show_list(list *l);
+
 #endif

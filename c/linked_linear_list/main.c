@@ -1,29 +1,47 @@
 #include "linked_list.h"
 #include <stdio.h>
 
+void menu();
+void show_list(list *l);
+
 int main(){
-  list *a;
-  
-  //TEST *insert_list* FUNCTION
-  printf("*TESTING INSERT_LIST FUNCTION*\n");
-  insert_list(&a, 7);
-  printf("The head of list is %d.\n", a->node);
-  printf("Inserting another element: 3\n");
-  insert_list(&a, 3);
-  printf("Now the head is %d.\n", a->node);
-
- //TEST *search_list* FUNCTION
-  printf("\n*TESTING SEARCH LIST FUNCTION*\n");
-  int searching = search_list(a,7)->node;
-  printf("Item: %d was founded", searching);
-
-  //TEST *delete_from_list* FUNCTION
-  printf("\n*TESTING DELETE FROM LIST FUNCTION*\n");
-  delete_from_list(&a, 7);
-  printf("\nnew list: ");
+  list *a = NULL;
+  int op;
   do{
-    printf("%d ", a->node);
-  }while(a->next != NULL);
-
+    menu();
+    printf("Insert an option: ");
+    scanf("%d", &op);
+    int x;
+    switch (op) {
+      case 1:
+        printf("Element to insert: ");
+        scanf("%d", &x);
+        insert_list(&a, x);
+      break;
+      case 2:
+        printf("\nElement to search: ");
+        scanf("%d", &x);
+        list *searching = search_list(a, x);
+        if(searching != NULL)
+          printf("%d was found\n", searching->node);
+        else
+          printf("element not found\n");
+        break;
+      case 3:
+        printf("\nElement to delete: ");
+        scanf("%d", &x);
+        delete_from_list(&a, x);
+    }
+    show_list(a);
+  }while(op != 0);
   return 0;
 }
+
+void menu(){
+  int op; 
+  printf("\n1 - insert an element\n");
+  printf("2 - search an element\n");
+  printf("3 - delete an element\n");
+  printf("0 - quit\n");
+}
+
