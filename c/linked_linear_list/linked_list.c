@@ -121,6 +121,17 @@ void delete_from_list_by_position(list **l, int pos){
   }
 }
 
+void delete_list(list **l){
+  list *p;
+  while(*l != NULL){
+    p = *l;
+    *l = p->next;
+    free(p);
+  }
+  free(*l);
+  printf("list destroyed");
+}
+
 void show_list(list *l){
   printf("list: ");
   while(l != NULL){

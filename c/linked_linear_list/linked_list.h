@@ -17,6 +17,8 @@ void delete_from_list_by_position(list **l, int pos);
 
 list *predecessor_list(list *l, int item);
 
+void delete_list(list **l);
+
 void show_list(list *l);
 
 #endif

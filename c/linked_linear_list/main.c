@@ -50,6 +50,7 @@ int main(){
     }
     show_list(a);
   }while(op != 0);
+  delete_list(&a);
   return 0;
 }
 
