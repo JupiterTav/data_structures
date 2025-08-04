@@ -16,7 +16,7 @@ A Linear list _l_ is a set of all nodes $$N = {n_1, n_2, n_3, ..., n_k}$$, where
 We can implement as a contiguous or linked data structure according to our needs and  if they are based on arrays or pointers.
 -   contiguously: A single chunk of memory is allocated for a structure of pre-determined size. 
 -   Linked: composed of distinct chunks of memory allocated dynamically as the structure grows.
-    [[./linked_linear_list/]]
+    [./linked_linear_list/]
 
 
 
