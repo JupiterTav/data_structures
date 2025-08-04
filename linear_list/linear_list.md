@@ -1,11 +1,22 @@
-### Linear List 
-A Linear list _l_ is a set of all nodes $$N = {n_1, n_2, n_3, ..., n_k}$$, where k >= 0. If k = 0 then l is void. Else l is pointing to header's list, that is, where the list begins and the way we will run through depends upon the implementation
+## Linear List 
+A Linear list _l_ is a set of all nodes $$N = {n_1, n_2, n_3, ..., n_k}$$, where k >= 0. If k = 0 then l is void. Else l is pointing to header's list, that is, where the list begins and the way we will run through depends upon the implementation.
+
+### Operations
+ - insert, insert_end, insert_pos -> inserts an item at the head, tail or a given position (index) in the list;
+ 
+ - search_list -> gets an item, if exists, inside the list;
+ 
+ - delete from list, delete from list by position -> deletes an item of the list ;
+ 
+ - delete list -> deletes all itens of the list;
+
+ - show_list -> prints the list;
 
 ### implementation
 We can implement as a contiguous or linked data structure according to our needs and  if they are based on arrays or pointers.
 -   contiguously: A single chunk of memory is allocated for a structure of pre-determined size. 
 -   Linked: composed of distinct chunks of memory allocated dynamically as the structure grows.
-
+    [[./linked_linear_list/]]
 
 
 
